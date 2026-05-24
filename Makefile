@@ -16,7 +16,7 @@ CC = riscv64-elf-gcc
 
 # CFLAGS = C Compiler Flags（C编译器标志）
 # 这些是给编译器的额外指令，控制它怎么编译代码
-CFLAGS = -nostdlib -nostartfiles -ffreestanding -Wall -g -Idrivers
+CFLAGS = -nostdlib -nostartfiles -ffreestanding -Wall -g -Idrivers -mcmodel=medany
 
 # 逐个解释每个标志：
 # -nostdlib        : 不使用标准C库（因为内核里没有printf、malloc这些函数，你要自己写）
