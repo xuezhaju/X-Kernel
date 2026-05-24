@@ -16,7 +16,7 @@ CC = riscv64-elf-gcc
 
 # CFLAGS = C Compiler Flags（C编译器标志）
 # 这些是给编译器的额外指令，控制它怎么编译代码
-CFLAGS = -nostdlib -nostartfiles -ffreestanding -Wall -g
+CFLAGS = -nostdlib -nostartfiles -ffreestanding -Wall -g -Idrivers
 
 # 逐个解释每个标志：
 # -nostdlib        : 不使用标准C库（因为内核里没有printf、malloc这些函数，你要自己写）
@@ -40,7 +40,7 @@ LDFLAGS = -T kernel.ld
 # boot/start.S 编译后变成 boot/start.o
 # kernel/main.c 编译后变成 kernel/main.o
 # 链接器会把这两个 .o 文件合并成最终的内核镜像
-OBJS = boot/start.o kernel/main.o
+OBJS = boot/start.o kernel/main.o drivers/uart.o
 
 # ----------------------------------------------------------------------------
 # 默认目标（当你直接输入 `make` 时执行的目标）
