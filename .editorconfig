@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: GPL-2.0-only
+
+# C/汇编/设备树等内核核心代码：使用制表符，8字符缩进
+[{*.{c,awk,c,dts,dtsi,dtso,h,mk,rst,s,S},Kconfig,Makefile,Makefile.*}]
+indent_style = tab      # 使用制表符
+indent_size = 8         # 8字符缩进 ← 这就是内核标准！
+
+# Python/Rust/JSON：使用空格，4字符缩进
+[*.{json,py,rs}]
+indent_style = space
+indent_size = 4
+
+# 工具目录下的Python脚本：使用制表符，8字符缩进
+[tools/{perf,power,rcu,testing/kunit}/**.py,]
+indent_style = tab
+indent_size = 8
+
+# YAML：使用空格，2字符缩进
+[*.yaml]
+indent_style = space
+indent_size = 2
